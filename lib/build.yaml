@@ -1,0 +1,9 @@
+targets:
+  $default:
+    builders:
+      mobx_codegen|mobx_generator:
+        enabled: true
+        options:
+          # Defina o caminho onde serão gerados os arquivos mobx
+          # Certifique-se de que esteja dentro da pasta lib
+          output: lib/app/shared/stores
