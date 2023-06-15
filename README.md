@@ -1,16 +1,26 @@
-# escolar_modular
+# App Escolar com Flutter Modular
+## 📷 Video do Projeto
 
-A new Flutter project.
+https://github.com/tassiogustavo/escolar_modular/assets/70405308/4174c793-5411-4e88-a21d-a8690ce6270c
 
-## Getting Started
+## 📝 Descrição do projeto
+O Flutter Modular é um framework de gerenciamento de estado e de roteamento de páginas no Flutter, que oferece diversas vantagens significativas. Com o Modular, pude estruturar meu projeto de forma modularizada, o que trouxe uma série de benefícios:
 
-This project is a starting point for a Flutter application.
+1️⃣ Reutilização de código: O Modular permite que eu crie módulos independentes e reutilizáveis, facilitando a manutenção e economizando tempo no desenvolvimento de futuros projetos.
 
-A few resources to get you started if this is your first Flutter project:
+2️⃣ Organização e escalabilidade: Com a arquitetura modular, pude dividir meu app em módulos menores, facilitando a compreensão do código e tornando-o mais escalável e flexível para futuras melhorias e atualizações.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+3️⃣ Injeção de dependência: O Flutter Modular também oferece um poderoso sistema de injeção de dependência, tornando a integração de novos recursos e a comunicação entre os componentes do app muito mais simples e eficiente.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Uma das características impressionantes do Flutter Modular é a capacidade de realizar um "dispose" no módulo anterior e carregar o próximo módulo a partir do zero. Esse processo permite liberar a memória ocupada pelo módulo anterior, garantindo que somente os recursos necessários sejam carregados para o próximo módulo.
+
+Essa funcionalidade é especialmente útil em aplicativos que possuem múltiplas telas ou fluxos. Cada vez que o usuário navega entre as telas, o Flutter Modular realiza um descarte eficiente dos recursos do módulo anterior, evitando o acúmulo desnecessário de memória e garantindo uma experiência fluida e responsiva para os usuários.
+
+O App em si é simples é possível cadastrar alunos, criar cursos e matricular os estudantes em até três cursos diferentes. Cada curso poderá acomodar até dez alunos. Da um olhada no
+
+## 💻 Features do projeto
+* Gerência de estado, Mobx
+* Flutter Modular
+
+## 📊 Status do projeto
+✅ Concluído
