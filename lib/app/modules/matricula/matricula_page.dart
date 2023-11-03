@@ -120,6 +120,13 @@ class _MatriculaPageState extends State<MatriculaPage> {
                         codigoCurso: cursos[index].codigo!);
                     _databaseRepository.insertCursoAlunos(cursoAluno);
                   }
+                } else if (qtdAlunosPorCurso[index]['qtd_inscritos'] >= 10) {
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    content: Text(
+                      "Não é possivel mais matriculas, turma cheia",
+                      textAlign: TextAlign.center,
+                    ),
+                  ));
                 }
               }
 

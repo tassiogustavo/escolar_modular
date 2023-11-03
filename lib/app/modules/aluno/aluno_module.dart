@@ -8,7 +8,7 @@ import 'aluno_page.dart';
 class AlunoModule extends Module {
   @override
   final List<Bind> binds = [
-    Bind.lazySingleton((i) => DatabaseRepository(DatabaseHelper())),
+    Bind.lazySingleton((_) => DatabaseRepository(DatabaseHelper())),
     Bind((_) => AlunoStore()),
   ];
 

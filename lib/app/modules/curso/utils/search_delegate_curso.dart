@@ -1,9 +1,13 @@
+import 'package:escolar_modular/app/modules/curso/utils/display_dialog_helper.dart';
+import 'package:escolar_modular/app/shared/stores/curso_store.dart';
 import 'package:escolar_modular/models/curso.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class SearchDelegateCurso extends SearchDelegate {
   List<Curso> cursos = [];
   SearchDelegateCurso(this.cursos);
+  final CursoStore cursoStore = Modular.get<CursoStore>();
 
   String removeDiacritics(String str) {
     var withDia =
@@ -46,9 +50,9 @@ class SearchDelegateCurso extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    List<Curso> searchAlunos = [];
+    List<Curso> searchCursos = [];
     if (!(query.length < 3)) {
-      searchAlunos = cursos.where((element) {
+      searchCursos = cursos.where((element) {
         final partesNome =
             removeDiacritics(element.descricao.toLowerCase()).split(' ');
         final partesBusca = removeDiacritics(query.toLowerCase()).split(' ');
@@ -76,13 +80,15 @@ class SearchDelegateCurso extends SearchDelegate {
     }
 
     return ListView.builder(
-      itemCount: searchAlunos.length,
+      itemCount: searchCursos.length,
       itemBuilder: (context, index) {
         return ListTile(
-          title: Text(searchAlunos[index].descricao),
+          title: Text(searchCursos[index].descricao),
           onTap: () {
-            query = searchAlunos[index].descricao;
-            showResults(context);
+            Navigator.pop(context);
+            cursoStore.fetchByCurso(searchCursos[index].codigo!);
+            DisplayDialogHelper displayDialog = DisplayDialogHelper();
+            displayDialog.displayMatriculados(context);
           },
         );
       },
